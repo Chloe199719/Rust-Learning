@@ -51,7 +51,7 @@ impl Rectangle {
     }
 }
 impl Rectangle {
-    fn square(size: u32) -> Rectangle {
+    fn square(size: u32) -> Rectangle { // associated function aka constructor
         Rectangle {
             width: size,
             height: size,
