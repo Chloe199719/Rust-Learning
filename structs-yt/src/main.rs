@@ -50,6 +50,20 @@ impl Rectangle {
         self.width > other.width && self.height > other.height
     }
 }
+impl Rectangle {
+    fn square(size: u32) -> Rectangle {
+        Rectangle {
+            width: size,
+            height: size,
+        }
+    }
+    fn create(width: u32, height: u32) -> Rectangle {
+        Rectangle {
+            width,
+            height,
+        }
+    }
+}
 fn main(){
     let rect = Rectangle {
         width: 30,
@@ -63,6 +77,10 @@ fn main(){
         width: 20,
         height: 40,
     };
+    let rect3 = Rectangle::square(3);
+    let rect4 = Rectangle::create(3, 4);
+    println!("rect3 is {:#?}", rect3);
+    println!("rect4 is {:#?}", rect4);
     println!("Can rect hold rect2? {}", rect.can_hold(&rect2));
     println!("Can rect hold rect1? {}", rect.can_hold(&rect1));
     println!("rect is {:#?}", rect);
